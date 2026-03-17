@@ -19,8 +19,8 @@ resource "aws_iam_role_policy_attachment" "lambda_policy" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
 
-resource "aws_lambda_function" "my_lambda" {
-  function_name = "my_lambda_function"
+resource "aws_lambda_function" "prudhvi_lambda" {
+  function_name = "prudhvi_lambda_function"
   role          =  aws_iam_role.lambda_role.arn
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.12"
