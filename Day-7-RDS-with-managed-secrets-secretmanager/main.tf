@@ -12,7 +12,7 @@ resource "aws_db_instance" "default" {
   parameter_group_name    = "default.mysql8.0"
 
   # Enable backups and retention
-  backup_retention_period  = 7   # Retain backups for 7 days
+  # backup_retention_period  = 7   # Retain backups for 7 days
   backup_window            = "02:00-03:00" # Daily backup window (UTC)
 
   # Enable monitoring (CloudWatch Enhanced Monitoring)
@@ -27,7 +27,7 @@ resource "aws_db_instance" "default" {
   maintenance_window = "sun:04:00-sun:05:00"  # Maintenance every Sunday (UTC)
 
   # Enable deletion protection (to prevent accidental deletion)
-  deletion_protection = true
+   deletion_protection = false
 
   # Skip final snapshot
   skip_final_snapshot = true
