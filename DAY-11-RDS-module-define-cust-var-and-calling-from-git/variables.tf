@@ -3,6 +3,10 @@ variable "db_identifier" {
   
 }
 
+variable "db_name"{
+    default = "rds-terraform"
+  
+}
 variable "db_username" {
     default = ""
   

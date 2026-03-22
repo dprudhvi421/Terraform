@@ -2,7 +2,8 @@
 
 module "rds" {
     
-    source = "github.com/dprudhvi421/Terraform/DAY-11-RDS-module"
+    #source = "github.com/dprudhvi421/Terraform/DAY-11-RDS-module"
+    source = "../DAY-11-RDS-module"
     vpc_cidr = "10.0.0.0/16"
 
 subnets = {
@@ -23,8 +24,8 @@ db_allocated_storage  = "10"
 db_username           = "admin"
 
 
-backup_window      = "02:00-03:00"
-maintenance_window = "sun:04:00-sun:05:00"
+#backup_window      = "02:00-03:00"
+#maintenance_window = "sun:04:00-sun:05:00"
 
   
 }
