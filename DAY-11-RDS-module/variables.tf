@@ -99,7 +99,7 @@ variable "maintenance_window" {
 variable "deletion_protection" {
   description = "Enable deletion protection"
   type        = bool
-  default     = true
+  default     = false ## In real time it shouild be true. used in real time when no one wants to delete the database by mistake
 }
 
 variable "skip_final_snapshot" {
