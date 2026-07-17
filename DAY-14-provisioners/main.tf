@@ -2,7 +2,7 @@
 # Key Pair
 resource "aws_key_pair" "example" {
   key_name   = "task"
-  public_key = file("~/.ssh/id_rsa.pub")
+  public_key = file("~/.ssh/id_rsa.pub")  ## also we can add like this. file("C:/Users/D.PRUDHVI/.ssh/id_rsa.pub") # Path to your public key
 }
 
 # VPC
@@ -94,7 +94,7 @@ resource "aws_instance" "server" {
   connection {
     type        = "ssh"
     user        = "ubuntu"                          # ✅ Correct for Ubuntu AMIs
-    private_key = file("~/.ssh/id_rsa")             # Path to private key
+    private_key = file("~/.ssh/id_rsa")             # Path to private key file("C:/Users/D.PRUDHVI/.ssh/id_rsa") 
     host        = self.public_ip
     timeout     = "2m"
   }
@@ -121,7 +121,7 @@ resource "aws_instance" "server" {
 #     connection {
 #       host        = aws_instance.server.public_ip
 #       user        = "ubuntu"
-#       private_key = file("~/.ssh/id_rsa")
+#       private_key = file("~/.ssh/id_rsa")  ## file("C:/Users/D.PRUDHVI/.ssh/id_rsa") 
 #     }
 
 #     inline = [
